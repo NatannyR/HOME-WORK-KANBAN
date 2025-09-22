@@ -100,3 +100,9 @@ function createTaskItem(text, status) {
 
   return li;
 }
+
+function atualizarContadores() {
+  document.getElementById('todo-count').textContent = document.getElementById('todo-list').children.length;
+  document.getElementById('inprogress-count').textContent = document.getElementById('inprogress-list').children.length;
+  document.getElementById('done-count').textContent = document.getElementById('done-list').children.length;
+}

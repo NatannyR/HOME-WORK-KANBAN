@@ -1,14 +1,14 @@
 
 body {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  background: #f4f6fb;
+  background: #f6f7f9;
   margin: 0;
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
-  color: #2d3436;
+  color: #222;
   margin-top: 32px;
   margin-bottom: 16px;
   font-weight: 700;
@@ -24,9 +24,9 @@ h1 {
 }
 
 .column {
-  background: #fff;
+  background: #f9fafb;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: none;
   padding: 18px 16px 24px 16px;
   min-width: 260px;
   flex: 1;
@@ -44,7 +44,7 @@ h1 {
 
 .kanban-header h2 {
   font-size: 1.2rem;
-  color: #2980b9;
+  color: #3a3d42;
   font-weight: 600;
   margin: 0;
 }
@@ -54,7 +54,7 @@ h1 {
   border-radius: 12px;
   padding: 2px 10px;
   font-weight: bold;
-  color: #2980b9;
+  color: #7fa9d1;
   font-size: 1rem;
 }
 
@@ -65,7 +65,7 @@ ul {
 }
 
 li {
-  background: #f7faff;
+  background: #fff;
   border-radius: 8px;
   margin-bottom: 10px;
   padding: 10px 12px;
@@ -73,13 +73,13 @@ li {
   align-items: center;
   justify-content: space-between;
   font-size: 1rem;
-  color: #444;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  color: #333;
+  box-shadow: none;
   transition: background 0.2s;
 }
 
 li:hover {
-  background: #eaf3fb;
+  background: #f2f4f7;
 }
 
 .task-text {
@@ -89,7 +89,7 @@ li:hover {
 }
 
 .move-btn {
-  background-color: #3498db;
+  background-color: #e9ecef;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -103,11 +103,12 @@ li:hover {
   align-items: center;
   justify-content: center;
   transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: none;
 }
 .move-btn:hover {
-  background-color: #217dbb;
-  box-shadow: 0 2px 6px rgba(52,152,219,0.15);
+  background-color: #dee2e6;
+  color: #007bff;
+  box-shadow: none;
 }
 
 #todo-input {
@@ -121,7 +122,7 @@ li:hover {
 }
 
 #add-todo-btn {
-  background: #27ae60;
+  background: #007bff;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -132,7 +133,7 @@ li:hover {
   transition: background 0.2s;
 }
 #add-todo-btn:hover {
-  background: #219150;
+  background: #0056b3;
 }
 
 @media (max-width: 900px) {
@@ -168,4 +169,24 @@ li:hover {
     font-size: 0.95rem;
     padding: 8px 8px;
   }
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 12px 24px
+}
+
+button.btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+  box-shadow: none;
 }
