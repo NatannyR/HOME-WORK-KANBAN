@@ -56,3 +56,30 @@ h1 {
         min-width: 70px;
     }
 }
+.move-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0 4px;
+  transition: background 0.2s;
+}
+.move-btn:hover {
+  background-color: #217dbb;
+}
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.column-count {
+  background: #eee;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-weight: bold;
+}
