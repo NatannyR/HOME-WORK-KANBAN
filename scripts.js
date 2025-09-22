@@ -11,7 +11,38 @@ document.getElementById("add-todo-btn").addEventListener("click", function () {
 
 function createTaskItem(text, status) {
   const li = document.createElement("li");
-  li.textContent = text;
+
+  let doneBtn = null;
+  if (status === "todo" || status === "inprogress") {
+    doneBtn = document.createElement("button");
+    doneBtn.textContent = "☐";
+    doneBtn.title = "Marcar como concluída";
+    doneBtn.className = "move-btn";
+    doneBtn.onclick = function () {
+      document
+        .getElementById("done-list")
+        .appendChild(createTaskItem(text, "done"));
+      li.remove();
+      if (typeof atualizarContadores === "function") atualizarContadores();
+    };
+    li.appendChild(doneBtn);
+  }
+
+ 
+  const taskText = document.createElement("span");
+  taskText.className = "task-text";
+  taskText.textContent = text;
+  li.appendChild(taskText);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "🗑️";
+  deleteBtn.title = "Excluir tarefa";
+  deleteBtn.className = "move-btn";
+  deleteBtn.onclick = function () {
+    li.remove();
+    if (typeof atualizarContadores === "function") atualizarContadores();
+  };
+  li.appendChild(deleteBtn);
 
   if (status === "todo") {
     const nextBtn = document.createElement("button");
@@ -25,7 +56,6 @@ function createTaskItem(text, status) {
       li.remove();
       atualizarContadores();
     };
-
     li.appendChild(nextBtn);
   } else if (status === "inprogress") {
     const prevBtn = document.createElement("button");
@@ -39,7 +69,6 @@ function createTaskItem(text, status) {
       li.remove();
       atualizarContadores();
     };
-
     li.appendChild(prevBtn);
 
     const nextBtn = document.createElement("button");
@@ -53,7 +82,6 @@ function createTaskItem(text, status) {
       li.remove();
       atualizarContadores();
     };
-
     li.appendChild(nextBtn);
   } else if (status === "done") {
     const prevBtn = document.createElement("button");
@@ -67,18 +95,8 @@ function createTaskItem(text, status) {
       li.remove();
       atualizarContadores();
     };
-
     li.appendChild(prevBtn);
   }
 
   return li;
-}
-
-function atualizarContadores() {
-  document.getElementById("todo-count").textContent =
-    document.getElementById("todo-list").children.length;
-  document.getElementById("inprogress-count").textContent =
-    document.getElementById("inprogress-list").children.length;
-  document.getElementById("done-count").textContent =
-    document.getElementById("done-list").children.length;
 }

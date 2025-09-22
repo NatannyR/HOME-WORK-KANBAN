@@ -1,85 +1,171 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f8f9fa;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #f4f6fb;
+  margin: 0;
 }
 
 h1 {
-    text-align: center;
-    font-size: 1.4rem;
-    color: #333;
-    margin-top: 24px;
-    margin-bottom: 8px;
-    font-weight: 500;
-    letter-spacing: 1px;
+  text-align: center;
+  font-size: 2rem;
+  color: #2d3436;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.kanban-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 12px 0;
-    width: 100vw;
-    box-sizing: border-box;
+.kanban-board {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 24px auto;
+  max-width: 1100px;
 }
 
 .column {
-    min-width: 90px;
-    padding: 8px 14px;
-    background: #f6f6f6;
-    border-radius: 6px;
-    border: 1px solid #eee;
-    text-align: center;
-    color: #444;
-    font-size: 1rem;
-    font-weight: 500;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-    transition: background 0.2s;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 18px 16px 24px 16px;
+  min-width: 260px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-.column:hover {
-    background: #e9ecef;
+.kanban-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.to-do, .in-progress, .done {
+.kanban-header h2 {
+  font-size: 1.2rem;
+  color: #2980b9;
+  font-weight: 600;
+  margin: 0;
 }
 
-@media (max-width: 500px) {
-    .kanban-header {
-        gap: 10px;
-    }
-    .column {
-        padding: 6px 8px;
-        font-size: 0.95rem;
-        min-width: 70px;
-    }
+.column-count {
+  background: #e3eaf2;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-weight: bold;
+  color: #2980b9;
+  font-size: 1rem;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #f7faff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #444;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: background 0.2s;
+}
+
+li:hover {
+  background: #eaf3fb;
+}
+
+.task-text {
+  flex: 1;
+  margin-right: 8px;
+  word-break: break-word;
+}
+
 .move-btn {
   background-color: #3498db;
   color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
   cursor: pointer;
-  margin: 0 4px;
-  transition: background 0.2s;
+  margin-left: 4px;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 .move-btn:hover {
   background-color: #217dbb;
+  box-shadow: 0 2px 6px rgba(52,152,219,0.15);
 }
-.kanban-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
+
+#todo-input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #b2bec3;
+  font-size: 1rem;
+  margin-right: 8px;
+  width: 220px;
+  box-sizing: border-box;
 }
-.column-count {
-  background: #eee;
-  border-radius: 12px;
-  padding: 2px 8px;
-  font-weight: bold;
+
+#add-todo-btn {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+#add-todo-btn:hover {
+  background: #219150;
+}
+
+@media (max-width: 900px) {
+  .kanban-board {
+    flex-direction: column;
+    gap: 18px;
+    max-width: 98vw;
+  }
+  .column {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+  .kanban-header h2 {
+    font-size: 1rem;
+  }
+  #todo-input {
+    width: 120px;
+    font-size: 0.95rem;
+  }
+  #add-todo-btn {
+    padding: 7px 12px;
+    font-size: 0.95rem;
+  }
+  li {
+    font-size: 0.95rem;
+    padding: 8px 8px;
+  }
 }
