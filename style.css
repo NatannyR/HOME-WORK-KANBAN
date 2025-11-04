@@ -1,18 +1,24 @@
 
 body {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  background: #f6f7f9;
+  background: #ffffff;
   margin: 0;
 }
 
 h1 {
   text-align: center;
-  font-size: 2rem;
-  color: #222;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-top: 32px;
-  margin-bottom: 16px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  margin-bottom: 24px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 12px 0;
 }
 
 .kanban-board {
